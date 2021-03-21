@@ -26,7 +26,6 @@ def start_up():
 	
 
 
-
 def get_input():
 	#I'll need to get this working
 	parser = arg.ArgumentParser()

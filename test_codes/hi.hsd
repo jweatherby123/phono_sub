@@ -1,0 +1,56 @@
+Geometry = GenFormat {
+4 F
+ C
+1 1 0.000000000000       0.000000000000       0.250000000000      
+2 1 0.000000000000       0.000000000000       0.750000000000      
+3 1 0.333333330000       0.666666667000       0.250000000000      
+4 1 0.666666670000       0.333333333000       0.750000000000      
+0.000000000000       0.000000000000       0.000000000000      
+2.456000000000       0.000000000000       0.000000000000      
+-1.228000000000      2.126958391695       0.000000000000      
+0.000000000000       0.000000000000       6.696000000000      
+}
+
+Driver = ConjugateGradient {
+       MovedAtoms = 1:-1
+       MaxForceComponent = 1e-5
+       MaxSteps = 3000
+       LatticeOpt = Yes
+       OutputPrefix = "geo_end"
+}
+
+Hamiltonian = DFTB{
+  ThirdOrderFull = Yes
+  SCC = Yes
+  SCCTolerance = 1e-7
+  MaxSCCIterations = 125
+  MaxAngularMomentum = {
+    C = p
+  }
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = "xxx"
+    Separator = "-"
+    Suffix = ".skf"
+    LowerCaseTypeName = No
+  }
+  KPointsAndWeights = SupercellFolding {
+    4 0 0 
+    0 4 0
+    0 0 4
+    0.5 0.5 0.5
+  }
+  DampXH = Yes
+  DampXHExponent = 4.2
+  HubbardDerivs {
+    C = -0.1492
+  }
+}
+
+Options {
+  WriteDetailedXML = Yes
+}
+
+ParserOptions {
+  ParserVersion = 4
+}
+

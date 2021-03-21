@@ -2,11 +2,11 @@ import tools
 import os
 
 def DFTBp(input_file):
-	print("Setting up DFTBp calculations...")
+	print("Setting up DFTB+ calculation...")
 
 	tools.write_critic2(input_file)
-	#Need to figure out how I'm gonna do th einput files, nmight be for another dya
-	#make run a variable that can be used by the user
+	tools.write_dftbp(forces="1E-5")
+
 	run = True
 	if run:
 		run_dftbp()
