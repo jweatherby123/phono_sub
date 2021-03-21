@@ -15,6 +15,7 @@ def header(version):
 def things_im_working_on():
 	print("")
 	print("-----Things I'm currently working on.---")
+	print("Setting up github")
 	print("Reading a CIF file.")
 	print("Interfacing with critic2")
 	print("Interfacing with DFTB+")
